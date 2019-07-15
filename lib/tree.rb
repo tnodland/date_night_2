@@ -76,4 +76,20 @@ class BinarySearchTree
     hash["#{min.movie_title}"] = min.score
     return hash
   end
+
+  def sort
+    current_node = @nodes.min_by{ |node| node.score}
+    nodes = Array.new
+    loop do
+      hash = Hash.new
+      hash["#{current_node.movie_title}"] = current_node.score
+      nodes << hash
+      if current_node.next_node.nil?
+        break
+      else
+        current_node = current_node.next_node
+      end
+    end
+    return nodes
+  end
 end

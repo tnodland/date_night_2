@@ -49,4 +49,12 @@ RSpec.describe BinarySearchTree do
 
     expect(@tree.min).to eq({"Tragedy"=>45})
   end
+
+  it "can sort" do
+    @tree.insert(45, "Tragedy")
+    @tree.insert(50, "Action Movie")
+    @tree.insert(55, "Comedy")
+
+    expect(@tree.sort).to eq([{"Tragedy"=>45}, {"Action Movie"=>50}, {"Comedy"=>55}])
+  end
 end
