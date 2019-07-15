@@ -44,4 +44,8 @@ class BinarySearchTree
       new_node.previous_node = next_lowest_node
     end
   end
+
+  def include?(score)
+    @nodes.all? { |node| node.score == score }
+  end
 end

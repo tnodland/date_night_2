@@ -16,4 +16,11 @@ RSpec.describe BinarySearchTree do
     expect(@tree.insert(45, "Tragedy")).to eq(1)
     expect(@tree.insert(47, "Action Tragedy")).to eq(2)
   end
+
+  it "can include" do
+    @tree.insert(50, "Action Movie")
+
+    expect(@tree.include?(50)).to eq(true)
+    expect(@tree.include?(100)).to eq(false)
+  end
 end
