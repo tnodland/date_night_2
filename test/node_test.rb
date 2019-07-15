@@ -17,4 +17,10 @@ class NodeTest < Minitest::Test
     assert_nil node.next_node
     assert_nil node.previous_node
   end
+
+  def test_it_can_get_postion
+    node = Node.new(12, "Movie")
+
+    assert_equal 0, node.postion
+  end
 end
