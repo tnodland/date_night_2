@@ -1,5 +1,6 @@
 require './lib/node'
 require 'pry'
+require 'csv'
 
 class BinarySearchTree
   attr_reader :nodes
@@ -91,5 +92,13 @@ class BinarySearchTree
       end
     end
     return nodes
+  end
+
+  def load(location)
+    all_movies = CSV.read(location)
+    all_movies.each do |movie|
+      self.insert(movie[0].to_i, movie[1])
+    end
+    return all_movies.count
   end
 end

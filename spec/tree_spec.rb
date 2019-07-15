@@ -57,4 +57,9 @@ RSpec.describe BinarySearchTree do
 
     expect(@tree.sort).to eq([{"Tragedy"=>45}, {"Action Movie"=>50}, {"Comedy"=>55}])
   end
+
+  it "can load" do
+    expect(@tree.load('movies.txt')).to eq(99)
+    expect(@tree.max).to eq({" The Little Engine That Could"=>100})
+  end
 end
