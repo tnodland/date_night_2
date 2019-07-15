@@ -13,7 +13,7 @@ class NodeTest < Minitest::Test
     node = Node.new(12, "Movie")
 
     assert_equal "Movie", node.movie_title
-    assert_equal 12, node.position
+    assert_equal 12, node.score
     assert_nil node.next_node
     assert_nil node.previous_node
   end
