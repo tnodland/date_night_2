@@ -69,4 +69,11 @@ class BinarySearchTree
     hash["#{max.movie_title}"] = max.score
     return hash
   end
+
+  def min
+    min = @nodes.min_by{ |node| node.score}
+    hash = Hash.new
+    hash["#{min.movie_title}"] = min.score
+    return hash
+  end
 end
