@@ -23,4 +23,14 @@ RSpec.describe BinarySearchTree do
     expect(@tree.include?(50)).to eq(true)
     expect(@tree.include?(100)).to eq(false)
   end
+
+  it "can find depth of" do
+    @tree.insert(50, "Action Movie")
+    @tree.insert(55, "Comedy")
+    @tree.insert(45, "Tragedy")
+
+    expect(@tree.depth_of(50)).to eq(2)
+    expect(@tree.depth_of(45)).to eq(1)
+    expect(@tree.depth_of(55)).to eq(1)
+  end
 end

@@ -38,14 +38,28 @@ class BinarySearchTree
 
     unless next_highest_node.score == 101
       new_node.next_node = next_highest_node
+      if next_highest_node.previous_node.nil?
+        next_highest_node.previous_node = new_node
+      end
     end
 
     unless next_lowest_node.score == -1
       new_node.previous_node = next_lowest_node
+      if next_lowest_node.next_node.nil?
+        next_lowest_node.next_node = new_node
+      end
     end
   end
 
   def include?(score)
     @nodes.all? { |node| node.score == score }
+  end
+
+  def depth_of(score)
+    @nodes.each do |node|
+      if node.score == score
+        return node.postion
+      end
+    end
   end
 end
