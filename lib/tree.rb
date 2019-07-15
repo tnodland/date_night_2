@@ -62,4 +62,11 @@ class BinarySearchTree
       end
     end
   end
+
+  def max
+    max = @nodes.max_by{ |node| node.score}
+    hash = Hash.new
+    hash["#{max.movie_title}"] = max.score
+    return hash
+  end
 end
